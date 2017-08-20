@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huihong.qike.mapper.ProductAttrMapper">
+  <resultMap id="BaseResultMap" type="com.huihong.qike.pojo.ProductAttr">
+    <id column="productAttrId" jdbcType="INTEGER" property="productattrid" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="atrrCode" jdbcType="VARCHAR" property="atrrcode" />
+    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <result column="typeValue" jdbcType="VARCHAR" property="typevalue" />
+    <result column="typeName" jdbcType="VARCHAR" property="typename" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    productAttrId, lastUpdateTime, createTime, atrrCode, userId, typeValue, typeName
+  </sql>
+  <select id="selectByExample" parameterType="com.huihong.qike.pojo.ProductAttrExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from product_attr
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from product_attr
+    where productAttrId = #{productattrid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from product_attr
+    where productAttrId = #{productattrid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.huihong.qike.pojo.ProductAttrExample">
+    delete from product_attr
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.huihong.qike.pojo.ProductAttr">
+    insert into product_attr (productAttrId, lastUpdateTime, 
+      createTime, atrrCode, userId, 
+      typeValue, typeName)
+    values (#{productattrid,jdbcType=INTEGER}, #{lastupdatetime,jdbcType=TIMESTAMP}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{atrrcode,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER}, 
+      #{typevalue,jdbcType=VARCHAR}, #{typename,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.huihong.qike.pojo.ProductAttr">
+    insert into product_attr
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="productattrid != null">
+        productAttrId,
+      </if>
+      <if test="lastupdatetime != null">
+        lastUpdateTime,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="atrrcode != null">
+        atrrCode,
+      </if>
+      <if test="userid != null">
+        userId,
+      </if>
+      <if test="typevalue != null">
+        typeValue,
+      </if>
+      <if test="typename != null">
+        typeName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="productattrid != null">
+        #{productattrid,jdbcType=INTEGER},
+      </if>
+      <if test="lastupdatetime != null">
+        #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="atrrcode != null">
+        #{atrrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="typevalue != null">
+        #{typevalue,jdbcType=VARCHAR},
+      </if>
+      <if test="typename != null">
+        #{typename,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.huihong.qike.pojo.ProductAttrExample" resultType="java.lang.Integer">
+    select count(*) from product_attr
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update product_attr
+    <set>
+      <if test="record.productattrid != null">
+        productAttrId = #{record.productattrid,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastupdatetime != null">
+        lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createtime != null">
+        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.atrrcode != null">
+        atrrCode = #{record.atrrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userid != null">
+        userId = #{record.userid,jdbcType=INTEGER},
+      </if>
+      <if test="record.typevalue != null">
+        typeValue = #{record.typevalue,jdbcType=VARCHAR},
+      </if>
+      <if test="record.typename != null">
+        typeName = #{record.typename,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update product_attr
+    set productAttrId = #{record.productattrid,jdbcType=INTEGER},
+      lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
+      createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      atrrCode = #{record.atrrcode,jdbcType=VARCHAR},
+      userId = #{record.userid,jdbcType=INTEGER},
+      typeValue = #{record.typevalue,jdbcType=VARCHAR},
+      typeName = #{record.typename,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.huihong.qike.pojo.ProductAttr">
+    update product_attr
+    <set>
+      <if test="lastupdatetime != null">
+        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="atrrcode != null">
+        atrrCode = #{atrrcode,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        userId = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="typevalue != null">
+        typeValue = #{typevalue,jdbcType=VARCHAR},
+      </if>
+      <if test="typename != null">
+        typeName = #{typename,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where productAttrId = #{productattrid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.huihong.qike.pojo.ProductAttr">
+    update product_attr
+    set lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      atrrCode = #{atrrcode,jdbcType=VARCHAR},
+      userId = #{userid,jdbcType=INTEGER},
+      typeValue = #{typevalue,jdbcType=VARCHAR},
+      typeName = #{typename,jdbcType=VARCHAR}
+    where productAttrId = #{productattrid,jdbcType=INTEGER}
+  </update>
+</mapper>
