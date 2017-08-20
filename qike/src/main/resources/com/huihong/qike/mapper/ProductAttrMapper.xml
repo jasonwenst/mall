@@ -3,12 +3,13 @@
 <mapper namespace="com.huihong.qike.mapper.ProductAttrMapper">
   <resultMap id="BaseResultMap" type="com.huihong.qike.pojo.ProductAttr">
     <id column="productAttrId" jdbcType="INTEGER" property="productAttrId" />
-    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="productId" jdbcType="INTEGER" property="productId" />
     <result column="atrrCode" jdbcType="VARCHAR" property="atrrCode" />
     <result column="userId" jdbcType="INTEGER" property="userId" />
     <result column="typeValue" jdbcType="VARCHAR" property="typeValue" />
     <result column="typeName" jdbcType="VARCHAR" property="typeName" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -69,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    productAttrId, lastUpdateTime, createTime, atrrCode, userId, typeValue, typeName
+    productAttrId, productId, atrrCode, userId, typeValue, typeName, createTime, lastUpdateTime
   </sql>
   <select id="selectByExample" parameterType="com.huihong.qike.pojo.ProductAttrExample" resultMap="BaseResultMap">
     select
@@ -102,12 +103,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.huihong.qike.pojo.ProductAttr">
-    insert into product_attr (productAttrId, lastUpdateTime, 
-      createTime, atrrCode, userId, 
-      typeValue, typeName)
-    values (#{productAttrId,jdbcType=INTEGER}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{atrrCode,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, 
-      #{typeValue,jdbcType=VARCHAR}, #{typeName,jdbcType=VARCHAR})
+    insert into product_attr (productAttrId, productId, atrrCode, 
+      userId, typeValue, typeName, 
+      createTime, lastUpdateTime)
+    values (#{productAttrId,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{atrrCode,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=INTEGER}, #{typeValue,jdbcType=VARCHAR}, #{typeName,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{lastUpdateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.huihong.qike.pojo.ProductAttr">
     insert into product_attr
@@ -115,11 +116,8 @@
       <if test="productAttrId != null">
         productAttrId,
       </if>
-      <if test="lastUpdateTime != null">
-        lastUpdateTime,
-      </if>
-      <if test="createTime != null">
-        createTime,
+      <if test="productId != null">
+        productId,
       </if>
       <if test="atrrCode != null">
         atrrCode,
@@ -133,16 +131,19 @@
       <if test="typeName != null">
         typeName,
       </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="lastUpdateTime != null">
+        lastUpdateTime,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="productAttrId != null">
         #{productAttrId,jdbcType=INTEGER},
       </if>
-      <if test="lastUpdateTime != null">
-        #{lastUpdateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        #{createTime,jdbcType=TIMESTAMP},
+      <if test="productId != null">
+        #{productId,jdbcType=INTEGER},
       </if>
       <if test="atrrCode != null">
         #{atrrCode,jdbcType=VARCHAR},
@@ -155,6 +156,12 @@
       </if>
       <if test="typeName != null">
         #{typeName,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -170,11 +177,8 @@
       <if test="record.productAttrId != null">
         productAttrId = #{record.productAttrId,jdbcType=INTEGER},
       </if>
-      <if test="record.lastUpdateTime != null">
-        lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.createTime != null">
-        createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      <if test="record.productId != null">
+        productId = #{record.productId,jdbcType=INTEGER},
       </if>
       <if test="record.atrrCode != null">
         atrrCode = #{record.atrrCode,jdbcType=VARCHAR},
@@ -188,6 +192,12 @@
       <if test="record.typeName != null">
         typeName = #{record.typeName,jdbcType=VARCHAR},
       </if>
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastUpdateTime != null">
+        lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -196,12 +206,13 @@
   <update id="updateByExample" parameterType="map">
     update product_attr
     set productAttrId = #{record.productAttrId,jdbcType=INTEGER},
-      lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
-      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      productId = #{record.productId,jdbcType=INTEGER},
       atrrCode = #{record.atrrCode,jdbcType=VARCHAR},
       userId = #{record.userId,jdbcType=INTEGER},
       typeValue = #{record.typeValue,jdbcType=VARCHAR},
-      typeName = #{record.typeName,jdbcType=VARCHAR}
+      typeName = #{record.typeName,jdbcType=VARCHAR},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -209,11 +220,8 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.huihong.qike.pojo.ProductAttr">
     update product_attr
     <set>
-      <if test="lastUpdateTime != null">
-        lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="createTime != null">
-        createTime = #{createTime,jdbcType=TIMESTAMP},
+      <if test="productId != null">
+        productId = #{productId,jdbcType=INTEGER},
       </if>
       <if test="atrrCode != null">
         atrrCode = #{atrrCode,jdbcType=VARCHAR},
@@ -227,17 +235,24 @@
       <if test="typeName != null">
         typeName = #{typeName,jdbcType=VARCHAR},
       </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateTime != null">
+        lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
     </set>
     where productAttrId = #{productAttrId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.huihong.qike.pojo.ProductAttr">
     update product_attr
-    set lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
-      createTime = #{createTime,jdbcType=TIMESTAMP},
+    set productId = #{productId,jdbcType=INTEGER},
       atrrCode = #{atrrCode,jdbcType=VARCHAR},
       userId = #{userId,jdbcType=INTEGER},
       typeValue = #{typeValue,jdbcType=VARCHAR},
-      typeName = #{typeName,jdbcType=VARCHAR}
+      typeName = #{typeName,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP}
     where productAttrId = #{productAttrId,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -93,4 +93,14 @@ public class ProductDetail {
     public void setProductPrice(BigDecimal productPrice) {
         this.productPrice = productPrice;
     }
+
+	@Override
+	public String toString() {
+		return "ProductDetail [productDetailId=" + productDetailId + ", lastUpdateTime=" + lastUpdateTime
+				+ ", createTime=" + createTime + ", detailPic=" + detailPic + ", productId=" + productId
+				+ ", productColorId=" + productColorId + ", productAttrId=" + productAttrId + ", productAmount="
+				+ productAmount + ", productPrice=" + productPrice + "]";
+	}
+    
+    
 }

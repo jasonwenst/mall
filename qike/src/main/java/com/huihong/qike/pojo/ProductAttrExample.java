@@ -165,123 +165,63 @@ public class ProductAttrExample {
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeIsNull() {
-            addCriterion("lastUpdateTime is null");
+        public Criteria andProductIdIsNull() {
+            addCriterion("productId is null");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeIsNotNull() {
-            addCriterion("lastUpdateTime is not null");
+        public Criteria andProductIdIsNotNull() {
+            addCriterion("productId is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeEqualTo(Date value) {
-            addCriterion("lastUpdateTime =", value, "lastUpdateTime");
+        public Criteria andProductIdEqualTo(Integer value) {
+            addCriterion("productId =", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeNotEqualTo(Date value) {
-            addCriterion("lastUpdateTime <>", value, "lastUpdateTime");
+        public Criteria andProductIdNotEqualTo(Integer value) {
+            addCriterion("productId <>", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeGreaterThan(Date value) {
-            addCriterion("lastUpdateTime >", value, "lastUpdateTime");
+        public Criteria andProductIdGreaterThan(Integer value) {
+            addCriterion("productId >", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("lastUpdateTime >=", value, "lastUpdateTime");
+        public Criteria andProductIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("productId >=", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeLessThan(Date value) {
-            addCriterion("lastUpdateTime <", value, "lastUpdateTime");
+        public Criteria andProductIdLessThan(Integer value) {
+            addCriterion("productId <", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeLessThanOrEqualTo(Date value) {
-            addCriterion("lastUpdateTime <=", value, "lastUpdateTime");
+        public Criteria andProductIdLessThanOrEqualTo(Integer value) {
+            addCriterion("productId <=", value, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeIn(List<Date> values) {
-            addCriterion("lastUpdateTime in", values, "lastUpdateTime");
+        public Criteria andProductIdIn(List<Integer> values) {
+            addCriterion("productId in", values, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeNotIn(List<Date> values) {
-            addCriterion("lastUpdateTime not in", values, "lastUpdateTime");
+        public Criteria andProductIdNotIn(List<Integer> values) {
+            addCriterion("productId not in", values, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeBetween(Date value1, Date value2) {
-            addCriterion("lastUpdateTime between", value1, value2, "lastUpdateTime");
+        public Criteria andProductIdBetween(Integer value1, Integer value2) {
+            addCriterion("productId between", value1, value2, "productId");
             return (Criteria) this;
         }
 
-        public Criteria andLastUpdateTimeNotBetween(Date value1, Date value2) {
-            addCriterion("lastUpdateTime not between", value1, value2, "lastUpdateTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeIsNull() {
-            addCriterion("createTime is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeIsNotNull() {
-            addCriterion("createTime is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeEqualTo(Date value) {
-            addCriterion("createTime =", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeNotEqualTo(Date value) {
-            addCriterion("createTime <>", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeGreaterThan(Date value) {
-            addCriterion("createTime >", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
-            addCriterion("createTime >=", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeLessThan(Date value) {
-            addCriterion("createTime <", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
-            addCriterion("createTime <=", value, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeIn(List<Date> values) {
-            addCriterion("createTime in", values, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeNotIn(List<Date> values) {
-            addCriterion("createTime not in", values, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeBetween(Date value1, Date value2) {
-            addCriterion("createTime between", value1, value2, "createTime");
-            return (Criteria) this;
-        }
-
-        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
-            addCriterion("createTime not between", value1, value2, "createTime");
+        public Criteria andProductIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("productId not between", value1, value2, "productId");
             return (Criteria) this;
         }
 
@@ -552,6 +492,126 @@ public class ProductAttrExample {
 
         public Criteria andTypeNameNotBetween(String value1, String value2) {
             addCriterion("typeName not between", value1, value2, "typeName");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNull() {
+            addCriterion("createTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIsNotNull() {
+            addCriterion("createTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeEqualTo(Date value) {
+            addCriterion("createTime =", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotEqualTo(Date value) {
+            addCriterion("createTime <>", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThan(Date value) {
+            addCriterion("createTime >", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("createTime >=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThan(Date value) {
+            addCriterion("createTime <", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("createTime <=", value, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeIn(List<Date> values) {
+            addCriterion("createTime in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotIn(List<Date> values) {
+            addCriterion("createTime not in", values, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeBetween(Date value1, Date value2) {
+            addCriterion("createTime between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("createTime not between", value1, value2, "createTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeIsNull() {
+            addCriterion("lastUpdateTime is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeIsNotNull() {
+            addCriterion("lastUpdateTime is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeEqualTo(Date value) {
+            addCriterion("lastUpdateTime =", value, "lastUpdateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeNotEqualTo(Date value) {
+            addCriterion("lastUpdateTime <>", value, "lastUpdateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeGreaterThan(Date value) {
+            addCriterion("lastUpdateTime >", value, "lastUpdateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeGreaterThanOrEqualTo(Date value) {
+            addCriterion("lastUpdateTime >=", value, "lastUpdateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeLessThan(Date value) {
+            addCriterion("lastUpdateTime <", value, "lastUpdateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeLessThanOrEqualTo(Date value) {
+            addCriterion("lastUpdateTime <=", value, "lastUpdateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeIn(List<Date> values) {
+            addCriterion("lastUpdateTime in", values, "lastUpdateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeNotIn(List<Date> values) {
+            addCriterion("lastUpdateTime not in", values, "lastUpdateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeBetween(Date value1, Date value2) {
+            addCriterion("lastUpdateTime between", value1, value2, "lastUpdateTime");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastUpdateTimeNotBetween(Date value1, Date value2) {
+            addCriterion("lastUpdateTime not between", value1, value2, "lastUpdateTime");
             return (Criteria) this;
         }
     }

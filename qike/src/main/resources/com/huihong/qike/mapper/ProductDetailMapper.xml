@@ -273,4 +273,9 @@
       productPrice = #{productPrice,jdbcType=DECIMAL}
     where productDetailId = #{productDetailId,jdbcType=INTEGER}
   </update>
+  
+  <select id="selectByProductId" parameterType="com.huihong.qike.pojo.ProductDetail" resultMap="BaseResultMap">
+  	select * from product_detail where productId = #{productId}
+  </select>
+  
 </mapper>

@@ -5,9 +5,7 @@ import java.util.Date;
 public class ProductAttr {
     private Integer productAttrId;
 
-    private Date lastUpdateTime;
-
-    private Date createTime;
+    private Integer productId;
 
     private String atrrCode;
 
@@ -17,6 +15,10 @@ public class ProductAttr {
 
     private String typeName;
 
+    private Date createTime;
+
+    private Date lastUpdateTime;
+
     public Integer getProductAttrId() {
         return productAttrId;
     }
@@ -25,20 +27,12 @@ public class ProductAttr {
         this.productAttrId = productAttrId;
     }
 
-    public Date getLastUpdateTime() {
-        return lastUpdateTime;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setLastUpdateTime(Date lastUpdateTime) {
-        this.lastUpdateTime = lastUpdateTime;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public String getAtrrCode() {
@@ -71,5 +65,21 @@ public class ProductAttr {
 
     public void setTypeName(String typeName) {
         this.typeName = typeName;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
+    }
+
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 }

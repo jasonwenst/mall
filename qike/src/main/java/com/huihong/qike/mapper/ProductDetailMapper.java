@@ -1,9 +1,11 @@
 package com.huihong.qike.mapper;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.huihong.qike.pojo.ProductDetail;
 import com.huihong.qike.pojo.ProductDetailExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface ProductDetailMapper {
     int countByExample(ProductDetailExample example);
@@ -27,4 +29,7 @@ public interface ProductDetailMapper {
     int updateByPrimaryKeySelective(ProductDetail record);
 
     int updateByPrimaryKey(ProductDetail record);
+    
+    ProductDetail selectByProductId(Integer productId);
+    
 }

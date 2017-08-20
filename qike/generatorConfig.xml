@@ -16,7 +16,7 @@
 			targetProject="qike/src/main/resources" />
 		<javaClientGenerator targetPackage="com.huihong.qike.mapper"
 			targetProject="qike/src/main/java" type="XMLMAPPER" />
-		<table schema="vmall" tableName="%">
+		<table schema="vmall" tableName="product_attr">
  			<property name="useActualColumnNames" value="true" />  <!-- 使用与数据库一致的格式 -->
 		</table>
 	</context>
