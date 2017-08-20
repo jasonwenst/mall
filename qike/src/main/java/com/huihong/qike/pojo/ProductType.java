@@ -3,43 +3,43 @@ package com.huihong.qike.pojo;
 import java.util.Date;
 
 public class ProductType {
-    private Integer producttypeid;
+    private Integer productTypeId;
 
-    private String typename;
+    private String typeName;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    public Integer getProducttypeid() {
-        return producttypeid;
+    public Integer getProductTypeId() {
+        return productTypeId;
     }
 
-    public void setProducttypeid(Integer producttypeid) {
-        this.producttypeid = producttypeid;
+    public void setProductTypeId(Integer productTypeId) {
+        this.productTypeId = productTypeId;
     }
 
-    public String getTypename() {
-        return typename;
+    public String getTypeName() {
+        return typeName;
     }
 
-    public void setTypename(String typename) {
-        this.typename = typename;
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

@@ -10,7 +10,7 @@ public interface AddressMapper {
 
     int deleteByExample(AddressExample example);
 
-    int deleteByPrimaryKey(Integer addressid);
+    int deleteByPrimaryKey(Integer addressId);
 
     int insert(Address record);
 
@@ -18,7 +18,7 @@ public interface AddressMapper {
 
     List<Address> selectByExample(AddressExample example);
 
-    Address selectByPrimaryKey(Integer addressid);
+    Address selectByPrimaryKey(Integer addressId);
 
     int updateByExampleSelective(@Param("record") Address record, @Param("example") AddressExample example);
 

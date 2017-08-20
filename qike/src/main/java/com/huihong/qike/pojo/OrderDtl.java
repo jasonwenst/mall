@@ -3,98 +3,98 @@ package com.huihong.qike.pojo;
 import java.util.Date;
 
 public class OrderDtl {
-    private Integer orderdtlid;
+    private Integer orderDtlId;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Integer orderid;
+    private Integer orderId;
 
-    private Integer prodcutdtlid;
+    private Integer prodcutDtlID;
 
-    private Integer productcolorid;
+    private Integer productColorId;
 
-    private Integer productattrid;
+    private Integer productAttrId;
 
-    private Integer productamount;
+    private Integer productAmount;
 
-    private Long productprice;
+    private Long productPrice;
 
     private Integer integration;
 
-    private String detailpic;
+    private String detailPic;
 
-    public Integer getOrderdtlid() {
-        return orderdtlid;
+    public Integer getOrderDtlId() {
+        return orderDtlId;
     }
 
-    public void setOrderdtlid(Integer orderdtlid) {
-        this.orderdtlid = orderdtlid;
+    public void setOrderDtlId(Integer orderDtlId) {
+        this.orderDtlId = orderDtlId;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Integer getOrderid() {
-        return orderid;
+    public Integer getOrderId() {
+        return orderId;
     }
 
-    public void setOrderid(Integer orderid) {
-        this.orderid = orderid;
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 
-    public Integer getProdcutdtlid() {
-        return prodcutdtlid;
+    public Integer getProdcutDtlID() {
+        return prodcutDtlID;
     }
 
-    public void setProdcutdtlid(Integer prodcutdtlid) {
-        this.prodcutdtlid = prodcutdtlid;
+    public void setProdcutDtlID(Integer prodcutDtlID) {
+        this.prodcutDtlID = prodcutDtlID;
     }
 
-    public Integer getProductcolorid() {
-        return productcolorid;
+    public Integer getProductColorId() {
+        return productColorId;
     }
 
-    public void setProductcolorid(Integer productcolorid) {
-        this.productcolorid = productcolorid;
+    public void setProductColorId(Integer productColorId) {
+        this.productColorId = productColorId;
     }
 
-    public Integer getProductattrid() {
-        return productattrid;
+    public Integer getProductAttrId() {
+        return productAttrId;
     }
 
-    public void setProductattrid(Integer productattrid) {
-        this.productattrid = productattrid;
+    public void setProductAttrId(Integer productAttrId) {
+        this.productAttrId = productAttrId;
     }
 
-    public Integer getProductamount() {
-        return productamount;
+    public Integer getProductAmount() {
+        return productAmount;
     }
 
-    public void setProductamount(Integer productamount) {
-        this.productamount = productamount;
+    public void setProductAmount(Integer productAmount) {
+        this.productAmount = productAmount;
     }
 
-    public Long getProductprice() {
-        return productprice;
+    public Long getProductPrice() {
+        return productPrice;
     }
 
-    public void setProductprice(Long productprice) {
-        this.productprice = productprice;
+    public void setProductPrice(Long productPrice) {
+        this.productPrice = productPrice;
     }
 
     public Integer getIntegration() {
@@ -105,11 +105,11 @@ public class OrderDtl {
         this.integration = integration;
     }
 
-    public String getDetailpic() {
-        return detailpic;
+    public String getDetailPic() {
+        return detailPic;
     }
 
-    public void setDetailpic(String detailpic) {
-        this.detailpic = detailpic;
+    public void setDetailPic(String detailPic) {
+        this.detailPic = detailPic;
     }
 }

@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huihong.qike.mapper.ColorMapper">
   <resultMap id="BaseResultMap" type="com.huihong.qike.pojo.Color">
-    <id column="productColorId" jdbcType="INTEGER" property="productcolorid" />
-    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <id column="productColorId" jdbcType="INTEGER" property="productColorId" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
     <result column="color" jdbcType="VARCHAR" property="color" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -86,11 +86,11 @@
     select 
     <include refid="Base_Column_List" />
     from color
-    where productColorId = #{productcolorid,jdbcType=INTEGER}
+    where productColorId = #{productColorId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from color
-    where productColorId = #{productcolorid,jdbcType=INTEGER}
+    where productColorId = #{productColorId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.huihong.qike.pojo.ColorExample">
     delete from color
@@ -101,19 +101,19 @@
   <insert id="insert" parameterType="com.huihong.qike.pojo.Color">
     insert into color (productColorId, lastUpdateTime, 
       createTime, color)
-    values (#{productcolorid,jdbcType=INTEGER}, #{lastupdatetime,jdbcType=TIMESTAMP}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{color,jdbcType=VARCHAR})
+    values (#{productColorId,jdbcType=INTEGER}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{color,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.huihong.qike.pojo.Color">
     insert into color
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="productcolorid != null">
+      <if test="productColorId != null">
         productColorId,
       </if>
-      <if test="lastupdatetime != null">
+      <if test="lastUpdateTime != null">
         lastUpdateTime,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
       <if test="color != null">
@@ -121,14 +121,14 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="productcolorid != null">
-        #{productcolorid,jdbcType=INTEGER},
+      <if test="productColorId != null">
+        #{productColorId,jdbcType=INTEGER},
       </if>
-      <if test="lastupdatetime != null">
-        #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="color != null">
         #{color,jdbcType=VARCHAR},
@@ -144,14 +144,14 @@
   <update id="updateByExampleSelective" parameterType="map">
     update color
     <set>
-      <if test="record.productcolorid != null">
-        productColorId = #{record.productcolorid,jdbcType=INTEGER},
+      <if test="record.productColorId != null">
+        productColorId = #{record.productColorId,jdbcType=INTEGER},
       </if>
-      <if test="record.lastupdatetime != null">
-        lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="record.lastUpdateTime != null">
+        lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.createtime != null">
-        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="record.color != null">
         color = #{record.color,jdbcType=VARCHAR},
@@ -163,9 +163,9 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update color
-    set productColorId = #{record.productcolorid,jdbcType=INTEGER},
-      lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
+    set productColorId = #{record.productColorId,jdbcType=INTEGER},
+      lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
       color = #{record.color,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -174,23 +174,23 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.huihong.qike.pojo.Color">
     update color
     <set>
-      <if test="lastupdatetime != null">
-        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="color != null">
         color = #{color,jdbcType=VARCHAR},
       </if>
     </set>
-    where productColorId = #{productcolorid,jdbcType=INTEGER}
+    where productColorId = #{productColorId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.huihong.qike.pojo.Color">
     update color
-    set lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
+    set lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
       color = #{color,jdbcType=VARCHAR}
-    where productColorId = #{productcolorid,jdbcType=INTEGER}
+    where productColorId = #{productColorId,jdbcType=INTEGER}
   </update>
 </mapper>

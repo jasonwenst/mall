@@ -4,73 +4,73 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Order {
-    private Integer orderid;
+    private Integer orderId;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Integer userid;
+    private Integer userId;
 
-    private Integer totalintegration;
+    private Integer totalIntegration;
 
-    private BigDecimal totalprice;
+    private BigDecimal totalPrice;
 
-    private Integer addressid;
+    private Integer addressId;
 
-    public Integer getOrderid() {
-        return orderid;
+    public Integer getOrderId() {
+        return orderId;
     }
 
-    public void setOrderid(Integer orderid) {
-        this.orderid = orderid;
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getTotalintegration() {
-        return totalintegration;
+    public Integer getTotalIntegration() {
+        return totalIntegration;
     }
 
-    public void setTotalintegration(Integer totalintegration) {
-        this.totalintegration = totalintegration;
+    public void setTotalIntegration(Integer totalIntegration) {
+        this.totalIntegration = totalIntegration;
     }
 
-    public BigDecimal getTotalprice() {
-        return totalprice;
+    public BigDecimal getTotalPrice() {
+        return totalPrice;
     }
 
-    public void setTotalprice(BigDecimal totalprice) {
-        this.totalprice = totalprice;
+    public void setTotalPrice(BigDecimal totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
-    public Integer getAddressid() {
-        return addressid;
+    public Integer getAddressId() {
+        return addressId;
     }
 
-    public void setAddressid(Integer addressid) {
-        this.addressid = addressid;
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
     }
 }

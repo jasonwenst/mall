@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huihong.qike.mapper.ShopingCartMapper">
   <resultMap id="BaseResultMap" type="com.huihong.qike.pojo.ShopingCart">
-    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
-    <result column="userId" jdbcType="INTEGER" property="userid" />
-    <result column="productDetailId" jdbcType="INTEGER" property="productdetailid" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
+    <result column="productDetailId" jdbcType="INTEGER" property="productDetailId" />
     <result column="amount" jdbcType="VARCHAR" property="amount" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -92,22 +92,22 @@
   <insert id="insert" parameterType="com.huihong.qike.pojo.ShopingCart">
     insert into shoping_cart (lastUpdateTime, createTime, userId, 
       productDetailId, amount)
-    values (#{lastupdatetime,jdbcType=TIMESTAMP}, #{createtime,jdbcType=TIMESTAMP}, #{userid,jdbcType=INTEGER}, 
-      #{productdetailid,jdbcType=INTEGER}, #{amount,jdbcType=VARCHAR})
+    values (#{lastUpdateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, #{userId,jdbcType=INTEGER}, 
+      #{productDetailId,jdbcType=INTEGER}, #{amount,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.huihong.qike.pojo.ShopingCart">
     insert into shoping_cart
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="lastupdatetime != null">
+      <if test="lastUpdateTime != null">
         lastUpdateTime,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
-      <if test="userid != null">
+      <if test="userId != null">
         userId,
       </if>
-      <if test="productdetailid != null">
+      <if test="productDetailId != null">
         productDetailId,
       </if>
       <if test="amount != null">
@@ -115,17 +115,17 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="lastupdatetime != null">
-        #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="userid != null">
-        #{userid,jdbcType=INTEGER},
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
       </if>
-      <if test="productdetailid != null">
-        #{productdetailid,jdbcType=INTEGER},
+      <if test="productDetailId != null">
+        #{productDetailId,jdbcType=INTEGER},
       </if>
       <if test="amount != null">
         #{amount,jdbcType=VARCHAR},
@@ -141,17 +141,17 @@
   <update id="updateByExampleSelective" parameterType="map">
     update shoping_cart
     <set>
-      <if test="record.lastupdatetime != null">
-        lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="record.lastUpdateTime != null">
+        lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.createtime != null">
-        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.userid != null">
-        userId = #{record.userid,jdbcType=INTEGER},
+      <if test="record.userId != null">
+        userId = #{record.userId,jdbcType=INTEGER},
       </if>
-      <if test="record.productdetailid != null">
-        productDetailId = #{record.productdetailid,jdbcType=INTEGER},
+      <if test="record.productDetailId != null">
+        productDetailId = #{record.productDetailId,jdbcType=INTEGER},
       </if>
       <if test="record.amount != null">
         amount = #{record.amount,jdbcType=VARCHAR},
@@ -163,10 +163,10 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update shoping_cart
-    set lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
-      userId = #{record.userid,jdbcType=INTEGER},
-      productDetailId = #{record.productdetailid,jdbcType=INTEGER},
+    set lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      userId = #{record.userId,jdbcType=INTEGER},
+      productDetailId = #{record.productDetailId,jdbcType=INTEGER},
       amount = #{record.amount,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />

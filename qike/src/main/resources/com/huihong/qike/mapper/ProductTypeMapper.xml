@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huihong.qike.mapper.ProductTypeMapper">
   <resultMap id="BaseResultMap" type="com.huihong.qike.pojo.ProductType">
-    <id column="productTypeId" jdbcType="INTEGER" property="producttypeid" />
-    <result column="typeName" jdbcType="VARCHAR" property="typename" />
-    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <id column="productTypeId" jdbcType="INTEGER" property="productTypeId" />
+    <result column="typeName" jdbcType="VARCHAR" property="typeName" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -86,11 +86,11 @@
     select 
     <include refid="Base_Column_List" />
     from product_type
-    where productTypeId = #{producttypeid,jdbcType=INTEGER}
+    where productTypeId = #{productTypeId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from product_type
-    where productTypeId = #{producttypeid,jdbcType=INTEGER}
+    where productTypeId = #{productTypeId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.huihong.qike.pojo.ProductTypeExample">
     delete from product_type
@@ -101,37 +101,37 @@
   <insert id="insert" parameterType="com.huihong.qike.pojo.ProductType">
     insert into product_type (productTypeId, typeName, lastUpdateTime, 
       createTime)
-    values (#{producttypeid,jdbcType=INTEGER}, #{typename,jdbcType=VARCHAR}, #{lastupdatetime,jdbcType=TIMESTAMP}, 
-      #{createtime,jdbcType=TIMESTAMP})
+    values (#{productTypeId,jdbcType=INTEGER}, #{typeName,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.huihong.qike.pojo.ProductType">
     insert into product_type
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="producttypeid != null">
+      <if test="productTypeId != null">
         productTypeId,
       </if>
-      <if test="typename != null">
+      <if test="typeName != null">
         typeName,
       </if>
-      <if test="lastupdatetime != null">
+      <if test="lastUpdateTime != null">
         lastUpdateTime,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="producttypeid != null">
-        #{producttypeid,jdbcType=INTEGER},
+      <if test="productTypeId != null">
+        #{productTypeId,jdbcType=INTEGER},
       </if>
-      <if test="typename != null">
-        #{typename,jdbcType=VARCHAR},
+      <if test="typeName != null">
+        #{typeName,jdbcType=VARCHAR},
       </if>
-      <if test="lastupdatetime != null">
-        #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -144,17 +144,17 @@
   <update id="updateByExampleSelective" parameterType="map">
     update product_type
     <set>
-      <if test="record.producttypeid != null">
-        productTypeId = #{record.producttypeid,jdbcType=INTEGER},
+      <if test="record.productTypeId != null">
+        productTypeId = #{record.productTypeId,jdbcType=INTEGER},
       </if>
-      <if test="record.typename != null">
-        typeName = #{record.typename,jdbcType=VARCHAR},
+      <if test="record.typeName != null">
+        typeName = #{record.typeName,jdbcType=VARCHAR},
       </if>
-      <if test="record.lastupdatetime != null">
-        lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="record.lastUpdateTime != null">
+        lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.createtime != null">
-        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null">
@@ -163,10 +163,10 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update product_type
-    set productTypeId = #{record.producttypeid,jdbcType=INTEGER},
-      typeName = #{record.typename,jdbcType=VARCHAR},
-      lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP}
+    set productTypeId = #{record.productTypeId,jdbcType=INTEGER},
+      typeName = #{record.typeName,jdbcType=VARCHAR},
+      lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -174,23 +174,23 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.huihong.qike.pojo.ProductType">
     update product_type
     <set>
-      <if test="typename != null">
-        typeName = #{typename,jdbcType=VARCHAR},
+      <if test="typeName != null">
+        typeName = #{typeName,jdbcType=VARCHAR},
       </if>
-      <if test="lastupdatetime != null">
-        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where productTypeId = #{producttypeid,jdbcType=INTEGER}
+    where productTypeId = #{productTypeId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.huihong.qike.pojo.ProductType">
     update product_type
-    set typeName = #{typename,jdbcType=VARCHAR},
-      lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{createtime,jdbcType=TIMESTAMP}
-    where productTypeId = #{producttypeid,jdbcType=INTEGER}
+    set typeName = #{typeName,jdbcType=VARCHAR},
+      lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where productTypeId = #{productTypeId,jdbcType=INTEGER}
   </update>
 </mapper>

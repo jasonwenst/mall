@@ -1,23 +1,26 @@
 package com.huihong.qike.pojo;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 public class Product {
     private Integer id;
 
-    private String productid;
+    private String productId;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    private String procuctname;
+    private String procuctName;
 
-    private String productpicurl;
+    private String productPicUrl;
 
-    private Integer producttypeid;
+    private BigDecimal productShowPrice;
 
-    private String productdesc;
+    private Integer productTypeId;
+
+    private String productDesc;
 
     public Integer getId() {
         return id;
@@ -27,59 +30,67 @@ public class Product {
         this.id = id;
     }
 
-    public String getProductid() {
-        return productid;
+    public String getProductId() {
+        return productId;
     }
 
-    public void setProductid(String productid) {
-        this.productid = productid;
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getProcuctname() {
-        return procuctname;
+    public String getProcuctName() {
+        return procuctName;
     }
 
-    public void setProcuctname(String procuctname) {
-        this.procuctname = procuctname;
+    public void setProcuctName(String procuctName) {
+        this.procuctName = procuctName;
     }
 
-    public String getProductpicurl() {
-        return productpicurl;
+    public String getProductPicUrl() {
+        return productPicUrl;
     }
 
-    public void setProductpicurl(String productpicurl) {
-        this.productpicurl = productpicurl;
+    public void setProductPicUrl(String productPicUrl) {
+        this.productPicUrl = productPicUrl;
     }
 
-    public Integer getProducttypeid() {
-        return producttypeid;
+    public BigDecimal getProductShowPrice() {
+        return productShowPrice;
     }
 
-    public void setProducttypeid(Integer producttypeid) {
-        this.producttypeid = producttypeid;
+    public void setProductShowPrice(BigDecimal productShowPrice) {
+        this.productShowPrice = productShowPrice;
     }
 
-    public String getProductdesc() {
-        return productdesc;
+    public Integer getProductTypeId() {
+        return productTypeId;
     }
 
-    public void setProductdesc(String productdesc) {
-        this.productdesc = productdesc;
+    public void setProductTypeId(Integer productTypeId) {
+        this.productTypeId = productTypeId;
+    }
+
+    public String getProductDesc() {
+        return productDesc;
+    }
+
+    public void setProductDesc(String productDesc) {
+        this.productDesc = productDesc;
     }
 }

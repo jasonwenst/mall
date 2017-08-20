@@ -10,7 +10,7 @@ public interface ProductAttrMapper {
 
     int deleteByExample(ProductAttrExample example);
 
-    int deleteByPrimaryKey(Integer productattrid);
+    int deleteByPrimaryKey(Integer productAttrId);
 
     int insert(ProductAttr record);
 
@@ -18,7 +18,7 @@ public interface ProductAttrMapper {
 
     List<ProductAttr> selectByExample(ProductAttrExample example);
 
-    ProductAttr selectByPrimaryKey(Integer productattrid);
+    ProductAttr selectByPrimaryKey(Integer productAttrId);
 
     int updateByExampleSelective(@Param("record") ProductAttr record, @Param("example") ProductAttrExample example);
 

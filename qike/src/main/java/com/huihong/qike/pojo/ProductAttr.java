@@ -3,73 +3,73 @@ package com.huihong.qike.pojo;
 import java.util.Date;
 
 public class ProductAttr {
-    private Integer productattrid;
+    private Integer productAttrId;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    private String atrrcode;
+    private String atrrCode;
 
-    private Integer userid;
+    private Integer userId;
 
-    private String typevalue;
+    private String typeValue;
 
-    private String typename;
+    private String typeName;
 
-    public Integer getProductattrid() {
-        return productattrid;
+    public Integer getProductAttrId() {
+        return productAttrId;
     }
 
-    public void setProductattrid(Integer productattrid) {
-        this.productattrid = productattrid;
+    public void setProductAttrId(Integer productAttrId) {
+        this.productAttrId = productAttrId;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getAtrrcode() {
-        return atrrcode;
+    public String getAtrrCode() {
+        return atrrCode;
     }
 
-    public void setAtrrcode(String atrrcode) {
-        this.atrrcode = atrrcode;
+    public void setAtrrCode(String atrrCode) {
+        this.atrrCode = atrrCode;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public String getTypevalue() {
-        return typevalue;
+    public String getTypeValue() {
+        return typeValue;
     }
 
-    public void setTypevalue(String typevalue) {
-        this.typevalue = typevalue;
+    public void setTypeValue(String typeValue) {
+        this.typeValue = typeValue;
     }
 
-    public String getTypename() {
-        return typename;
+    public String getTypeName() {
+        return typeName;
     }
 
-    public void setTypename(String typename) {
-        this.typename = typename;
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
     }
 }

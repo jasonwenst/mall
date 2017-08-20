@@ -10,7 +10,7 @@ public interface OrderDtlMapper {
 
     int deleteByExample(OrderDtlExample example);
 
-    int deleteByPrimaryKey(Integer orderdtlid);
+    int deleteByPrimaryKey(Integer orderDtlId);
 
     int insert(OrderDtl record);
 
@@ -18,7 +18,7 @@ public interface OrderDtlMapper {
 
     List<OrderDtl> selectByExample(OrderDtlExample example);
 
-    OrderDtl selectByPrimaryKey(Integer orderdtlid);
+    OrderDtl selectByPrimaryKey(Integer orderDtlId);
 
     int updateByExampleSelective(@Param("record") OrderDtl record, @Param("example") OrderDtlExample example);
 

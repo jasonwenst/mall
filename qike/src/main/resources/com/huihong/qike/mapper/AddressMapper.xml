@@ -2,15 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huihong.qike.mapper.AddressMapper">
   <resultMap id="BaseResultMap" type="com.huihong.qike.pojo.Address">
-    <id column="addressId" jdbcType="INTEGER" property="addressid" />
-    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
-    <result column="userId" jdbcType="INTEGER" property="userid" />
+    <id column="addressId" jdbcType="INTEGER" property="addressId" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="userId" jdbcType="INTEGER" property="userId" />
     <result column="province" jdbcType="VARCHAR" property="province" />
     <result column="city" jdbcType="VARCHAR" property="city" />
     <result column="area" jdbcType="VARCHAR" property="area" />
     <result column="address" jdbcType="VARCHAR" property="address" />
-    <result column="isDefault" jdbcType="INTEGER" property="isdefault" />
+    <result column="isDefault" jdbcType="INTEGER" property="isDefault" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -91,11 +91,11 @@
     select 
     <include refid="Base_Column_List" />
     from address
-    where addressId = #{addressid,jdbcType=INTEGER}
+    where addressId = #{addressId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from address
-    where addressId = #{addressid,jdbcType=INTEGER}
+    where addressId = #{addressId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.huihong.qike.pojo.AddressExample">
     delete from address
@@ -108,24 +108,24 @@
       userId, province, city, 
       area, address, isDefault
       )
-    values (#{addressid,jdbcType=INTEGER}, #{lastupdatetime,jdbcType=TIMESTAMP}, #{createtime,jdbcType=TIMESTAMP}, 
-      #{userid,jdbcType=INTEGER}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
-      #{area,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{isdefault,jdbcType=INTEGER}
+    values (#{addressId,jdbcType=INTEGER}, #{lastUpdateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{userId,jdbcType=INTEGER}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{area,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{isDefault,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.huihong.qike.pojo.Address">
     insert into address
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="addressid != null">
+      <if test="addressId != null">
         addressId,
       </if>
-      <if test="lastupdatetime != null">
+      <if test="lastUpdateTime != null">
         lastUpdateTime,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
-      <if test="userid != null">
+      <if test="userId != null">
         userId,
       </if>
       <if test="province != null">
@@ -140,22 +140,22 @@
       <if test="address != null">
         address,
       </if>
-      <if test="isdefault != null">
+      <if test="isDefault != null">
         isDefault,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="addressid != null">
-        #{addressid,jdbcType=INTEGER},
+      <if test="addressId != null">
+        #{addressId,jdbcType=INTEGER},
       </if>
-      <if test="lastupdatetime != null">
-        #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="userid != null">
-        #{userid,jdbcType=INTEGER},
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
       </if>
       <if test="province != null">
         #{province,jdbcType=VARCHAR},
@@ -169,8 +169,8 @@
       <if test="address != null">
         #{address,jdbcType=VARCHAR},
       </if>
-      <if test="isdefault != null">
-        #{isdefault,jdbcType=INTEGER},
+      <if test="isDefault != null">
+        #{isDefault,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -183,17 +183,17 @@
   <update id="updateByExampleSelective" parameterType="map">
     update address
     <set>
-      <if test="record.addressid != null">
-        addressId = #{record.addressid,jdbcType=INTEGER},
+      <if test="record.addressId != null">
+        addressId = #{record.addressId,jdbcType=INTEGER},
       </if>
-      <if test="record.lastupdatetime != null">
-        lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="record.lastUpdateTime != null">
+        lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.createtime != null">
-        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.userid != null">
-        userId = #{record.userid,jdbcType=INTEGER},
+      <if test="record.userId != null">
+        userId = #{record.userId,jdbcType=INTEGER},
       </if>
       <if test="record.province != null">
         province = #{record.province,jdbcType=VARCHAR},
@@ -207,8 +207,8 @@
       <if test="record.address != null">
         address = #{record.address,jdbcType=VARCHAR},
       </if>
-      <if test="record.isdefault != null">
-        isDefault = #{record.isdefault,jdbcType=INTEGER},
+      <if test="record.isDefault != null">
+        isDefault = #{record.isDefault,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null">
@@ -217,15 +217,15 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update address
-    set addressId = #{record.addressid,jdbcType=INTEGER},
-      lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
-      userId = #{record.userid,jdbcType=INTEGER},
+    set addressId = #{record.addressId,jdbcType=INTEGER},
+      lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      userId = #{record.userId,jdbcType=INTEGER},
       province = #{record.province,jdbcType=VARCHAR},
       city = #{record.city,jdbcType=VARCHAR},
       area = #{record.area,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
-      isDefault = #{record.isdefault,jdbcType=INTEGER}
+      isDefault = #{record.isDefault,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -233,14 +233,14 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.huihong.qike.pojo.Address">
     update address
     <set>
-      <if test="lastupdatetime != null">
-        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="userid != null">
-        userId = #{userid,jdbcType=INTEGER},
+      <if test="userId != null">
+        userId = #{userId,jdbcType=INTEGER},
       </if>
       <if test="province != null">
         province = #{province,jdbcType=VARCHAR},
@@ -254,22 +254,22 @@
       <if test="address != null">
         address = #{address,jdbcType=VARCHAR},
       </if>
-      <if test="isdefault != null">
-        isDefault = #{isdefault,jdbcType=INTEGER},
+      <if test="isDefault != null">
+        isDefault = #{isDefault,jdbcType=INTEGER},
       </if>
     </set>
-    where addressId = #{addressid,jdbcType=INTEGER}
+    where addressId = #{addressId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.huihong.qike.pojo.Address">
     update address
-    set lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
-      userId = #{userid,jdbcType=INTEGER},
+    set lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      userId = #{userId,jdbcType=INTEGER},
       province = #{province,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR},
       area = #{area,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
-      isDefault = #{isdefault,jdbcType=INTEGER}
-    where addressId = #{addressid,jdbcType=INTEGER}
+      isDefault = #{isDefault,jdbcType=INTEGER}
+    where addressId = #{addressId,jdbcType=INTEGER}
   </update>
 </mapper>

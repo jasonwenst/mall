@@ -4,60 +4,60 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class User {
-    private Integer userid;
+    private Integer userId;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    private String nickname;
+    private String nickName;
 
-    private String openid;
+    private String openId;
 
     private Integer integration;
 
     private BigDecimal balance;
 
-    private String picurl;
+    private String picUrl;
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
-    public String getOpenid() {
-        return openid;
+    public String getOpenId() {
+        return openId;
     }
 
-    public void setOpenid(String openid) {
-        this.openid = openid;
+    public void setOpenId(String openId) {
+        this.openId = openId;
     }
 
     public Integer getIntegration() {
@@ -76,11 +76,11 @@ public class User {
         this.balance = balance;
     }
 
-    public String getPicurl() {
-        return picurl;
+    public String getPicUrl() {
+        return picUrl;
     }
 
-    public void setPicurl(String picurl) {
-        this.picurl = picurl;
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 }

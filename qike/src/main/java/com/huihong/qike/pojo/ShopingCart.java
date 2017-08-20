@@ -3,46 +3,46 @@ package com.huihong.qike.pojo;
 import java.util.Date;
 
 public class ShopingCart {
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Integer userid;
+    private Integer userId;
 
-    private Integer productdetailid;
+    private Integer productDetailId;
 
     private String amount;
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
-    public Integer getProductdetailid() {
-        return productdetailid;
+    public Integer getProductDetailId() {
+        return productDetailId;
     }
 
-    public void setProductdetailid(Integer productdetailid) {
-        this.productdetailid = productdetailid;
+    public void setProductDetailId(Integer productDetailId) {
+        this.productDetailId = productDetailId;
     }
 
     public String getAmount() {

@@ -3,15 +3,16 @@
 <mapper namespace="com.huihong.qike.mapper.ProductMapper">
   <resultMap id="BaseResultMap" type="com.huihong.qike.pojo.Product">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="productId" jdbcType="VARCHAR" property="productid" />
-    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
-    <result column="procuctName" jdbcType="VARCHAR" property="procuctname" />
-    <result column="productPicUrl" jdbcType="VARCHAR" property="productpicurl" />
-    <result column="productTypeId" jdbcType="INTEGER" property="producttypeid" />
+    <result column="productId" jdbcType="VARCHAR" property="productId" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="procuctName" jdbcType="VARCHAR" property="procuctName" />
+    <result column="productPicUrl" jdbcType="VARCHAR" property="productPicUrl" />
+    <result column="productShowPrice" jdbcType="DECIMAL" property="productShowPrice" />
+    <result column="productTypeId" jdbcType="INTEGER" property="productTypeId" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.huihong.qike.pojo.Product">
-    <result column="productDesc" jdbcType="LONGVARCHAR" property="productdesc" />
+    <result column="productDesc" jdbcType="LONGVARCHAR" property="productDesc" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,7 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, productId, lastUpdateTime, createTime, procuctName, productPicUrl, productTypeId
+    id, productId, lastUpdateTime, createTime, procuctName, productPicUrl, productShowPrice, 
+    productTypeId
   </sql>
   <sql id="Blob_Column_List">
     productDesc
@@ -128,10 +130,12 @@
   <insert id="insert" parameterType="com.huihong.qike.pojo.Product">
     insert into product (id, productId, lastUpdateTime, 
       createTime, procuctName, productPicUrl, 
-      productTypeId, productDesc)
-    values (#{id,jdbcType=INTEGER}, #{productid,jdbcType=VARCHAR}, #{lastupdatetime,jdbcType=TIMESTAMP}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{procuctname,jdbcType=VARCHAR}, #{productpicurl,jdbcType=VARCHAR}, 
-      #{producttypeid,jdbcType=INTEGER}, #{productdesc,jdbcType=LONGVARCHAR})
+      productShowPrice, productTypeId, productDesc
+      )
+    values (#{id,jdbcType=INTEGER}, #{productId,jdbcType=VARCHAR}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{procuctName,jdbcType=VARCHAR}, #{productPicUrl,jdbcType=VARCHAR}, 
+      #{productShowPrice,jdbcType=DECIMAL}, #{productTypeId,jdbcType=INTEGER}, #{productDesc,jdbcType=LONGVARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.huihong.qike.pojo.Product">
     insert into product
@@ -139,25 +143,28 @@
       <if test="id != null">
         id,
       </if>
-      <if test="productid != null">
+      <if test="productId != null">
         productId,
       </if>
-      <if test="lastupdatetime != null">
+      <if test="lastUpdateTime != null">
         lastUpdateTime,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
-      <if test="procuctname != null">
+      <if test="procuctName != null">
         procuctName,
       </if>
-      <if test="productpicurl != null">
+      <if test="productPicUrl != null">
         productPicUrl,
       </if>
-      <if test="producttypeid != null">
+      <if test="productShowPrice != null">
+        productShowPrice,
+      </if>
+      <if test="productTypeId != null">
         productTypeId,
       </if>
-      <if test="productdesc != null">
+      <if test="productDesc != null">
         productDesc,
       </if>
     </trim>
@@ -165,26 +172,29 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="productid != null">
-        #{productid,jdbcType=VARCHAR},
+      <if test="productId != null">
+        #{productId,jdbcType=VARCHAR},
       </if>
-      <if test="lastupdatetime != null">
-        #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="procuctname != null">
-        #{procuctname,jdbcType=VARCHAR},
+      <if test="procuctName != null">
+        #{procuctName,jdbcType=VARCHAR},
       </if>
-      <if test="productpicurl != null">
-        #{productpicurl,jdbcType=VARCHAR},
+      <if test="productPicUrl != null">
+        #{productPicUrl,jdbcType=VARCHAR},
       </if>
-      <if test="producttypeid != null">
-        #{producttypeid,jdbcType=INTEGER},
+      <if test="productShowPrice != null">
+        #{productShowPrice,jdbcType=DECIMAL},
       </if>
-      <if test="productdesc != null">
-        #{productdesc,jdbcType=LONGVARCHAR},
+      <if test="productTypeId != null">
+        #{productTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="productDesc != null">
+        #{productDesc,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -200,26 +210,29 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.productid != null">
-        productId = #{record.productid,jdbcType=VARCHAR},
+      <if test="record.productId != null">
+        productId = #{record.productId,jdbcType=VARCHAR},
       </if>
-      <if test="record.lastupdatetime != null">
-        lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="record.lastUpdateTime != null">
+        lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.createtime != null">
-        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.procuctname != null">
-        procuctName = #{record.procuctname,jdbcType=VARCHAR},
+      <if test="record.procuctName != null">
+        procuctName = #{record.procuctName,jdbcType=VARCHAR},
       </if>
-      <if test="record.productpicurl != null">
-        productPicUrl = #{record.productpicurl,jdbcType=VARCHAR},
+      <if test="record.productPicUrl != null">
+        productPicUrl = #{record.productPicUrl,jdbcType=VARCHAR},
       </if>
-      <if test="record.producttypeid != null">
-        productTypeId = #{record.producttypeid,jdbcType=INTEGER},
+      <if test="record.productShowPrice != null">
+        productShowPrice = #{record.productShowPrice,jdbcType=DECIMAL},
       </if>
-      <if test="record.productdesc != null">
-        productDesc = #{record.productdesc,jdbcType=LONGVARCHAR},
+      <if test="record.productTypeId != null">
+        productTypeId = #{record.productTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.productDesc != null">
+        productDesc = #{record.productDesc,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -229,13 +242,14 @@
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update product
     set id = #{record.id,jdbcType=INTEGER},
-      productId = #{record.productid,jdbcType=VARCHAR},
-      lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
-      procuctName = #{record.procuctname,jdbcType=VARCHAR},
-      productPicUrl = #{record.productpicurl,jdbcType=VARCHAR},
-      productTypeId = #{record.producttypeid,jdbcType=INTEGER},
-      productDesc = #{record.productdesc,jdbcType=LONGVARCHAR}
+      productId = #{record.productId,jdbcType=VARCHAR},
+      lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      procuctName = #{record.procuctName,jdbcType=VARCHAR},
+      productPicUrl = #{record.productPicUrl,jdbcType=VARCHAR},
+      productShowPrice = #{record.productShowPrice,jdbcType=DECIMAL},
+      productTypeId = #{record.productTypeId,jdbcType=INTEGER},
+      productDesc = #{record.productDesc,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -243,12 +257,13 @@
   <update id="updateByExample" parameterType="map">
     update product
     set id = #{record.id,jdbcType=INTEGER},
-      productId = #{record.productid,jdbcType=VARCHAR},
-      lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
-      procuctName = #{record.procuctname,jdbcType=VARCHAR},
-      productPicUrl = #{record.productpicurl,jdbcType=VARCHAR},
-      productTypeId = #{record.producttypeid,jdbcType=INTEGER}
+      productId = #{record.productId,jdbcType=VARCHAR},
+      lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      procuctName = #{record.procuctName,jdbcType=VARCHAR},
+      productPicUrl = #{record.productPicUrl,jdbcType=VARCHAR},
+      productShowPrice = #{record.productShowPrice,jdbcType=DECIMAL},
+      productTypeId = #{record.productTypeId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -256,49 +271,54 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.huihong.qike.pojo.Product">
     update product
     <set>
-      <if test="productid != null">
-        productId = #{productid,jdbcType=VARCHAR},
+      <if test="productId != null">
+        productId = #{productId,jdbcType=VARCHAR},
       </if>
-      <if test="lastupdatetime != null">
-        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="procuctname != null">
-        procuctName = #{procuctname,jdbcType=VARCHAR},
+      <if test="procuctName != null">
+        procuctName = #{procuctName,jdbcType=VARCHAR},
       </if>
-      <if test="productpicurl != null">
-        productPicUrl = #{productpicurl,jdbcType=VARCHAR},
+      <if test="productPicUrl != null">
+        productPicUrl = #{productPicUrl,jdbcType=VARCHAR},
       </if>
-      <if test="producttypeid != null">
-        productTypeId = #{producttypeid,jdbcType=INTEGER},
+      <if test="productShowPrice != null">
+        productShowPrice = #{productShowPrice,jdbcType=DECIMAL},
       </if>
-      <if test="productdesc != null">
-        productDesc = #{productdesc,jdbcType=LONGVARCHAR},
+      <if test="productTypeId != null">
+        productTypeId = #{productTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="productDesc != null">
+        productDesc = #{productDesc,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.huihong.qike.pojo.Product">
     update product
-    set productId = #{productid,jdbcType=VARCHAR},
-      lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
-      procuctName = #{procuctname,jdbcType=VARCHAR},
-      productPicUrl = #{productpicurl,jdbcType=VARCHAR},
-      productTypeId = #{producttypeid,jdbcType=INTEGER},
-      productDesc = #{productdesc,jdbcType=LONGVARCHAR}
+    set productId = #{productId,jdbcType=VARCHAR},
+      lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      procuctName = #{procuctName,jdbcType=VARCHAR},
+      productPicUrl = #{productPicUrl,jdbcType=VARCHAR},
+      productShowPrice = #{productShowPrice,jdbcType=DECIMAL},
+      productTypeId = #{productTypeId,jdbcType=INTEGER},
+      productDesc = #{productDesc,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.huihong.qike.pojo.Product">
     update product
-    set productId = #{productid,jdbcType=VARCHAR},
-      lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
-      procuctName = #{procuctname,jdbcType=VARCHAR},
-      productPicUrl = #{productpicurl,jdbcType=VARCHAR},
-      productTypeId = #{producttypeid,jdbcType=INTEGER}
+    set productId = #{productId,jdbcType=VARCHAR},
+      lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      procuctName = #{procuctName,jdbcType=VARCHAR},
+      productPicUrl = #{productPicUrl,jdbcType=VARCHAR},
+      productShowPrice = #{productShowPrice,jdbcType=DECIMAL},
+      productTypeId = #{productTypeId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

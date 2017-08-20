@@ -3,13 +3,13 @@ package com.huihong.qike.pojo;
 import java.util.Date;
 
 public class Address {
-    private Integer addressid;
+    private Integer addressId;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    private Integer userid;
+    private Integer userId;
 
     private String province;
 
@@ -19,38 +19,38 @@ public class Address {
 
     private String address;
 
-    private Integer isdefault;
+    private Integer isDefault;
 
-    public Integer getAddressid() {
-        return addressid;
+    public Integer getAddressId() {
+        return addressId;
     }
 
-    public void setAddressid(Integer addressid) {
-        this.addressid = addressid;
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getProvince() {
@@ -85,11 +85,11 @@ public class Address {
         this.address = address;
     }
 
-    public Integer getIsdefault() {
-        return isdefault;
+    public Integer getIsDefault() {
+        return isDefault;
     }
 
-    public void setIsdefault(Integer isdefault) {
-        this.isdefault = isdefault;
+    public void setIsDefault(Integer isDefault) {
+        this.isDefault = isDefault;
     }
 }

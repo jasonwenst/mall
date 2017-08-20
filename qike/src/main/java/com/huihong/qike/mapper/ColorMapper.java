@@ -10,7 +10,7 @@ public interface ColorMapper {
 
     int deleteByExample(ColorExample example);
 
-    int deleteByPrimaryKey(Integer productcolorid);
+    int deleteByPrimaryKey(Integer productColorId);
 
     int insert(Color record);
 
@@ -18,7 +18,7 @@ public interface ColorMapper {
 
     List<Color> selectByExample(ColorExample example);
 
-    Color selectByPrimaryKey(Integer productcolorid);
+    Color selectByPrimaryKey(Integer productColorId);
 
     int updateByExampleSelective(@Param("record") Color record, @Param("example") ColorExample example);
 

@@ -2,17 +2,17 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.huihong.qike.mapper.OrderDtlMapper">
   <resultMap id="BaseResultMap" type="com.huihong.qike.pojo.OrderDtl">
-    <id column="orderDtlId" jdbcType="INTEGER" property="orderdtlid" />
-    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastupdatetime" />
-    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
-    <result column="orderId" jdbcType="INTEGER" property="orderid" />
-    <result column="prodcutDtlID" jdbcType="INTEGER" property="prodcutdtlid" />
-    <result column="productColorId" jdbcType="INTEGER" property="productcolorid" />
-    <result column="productAttrId" jdbcType="INTEGER" property="productattrid" />
-    <result column="productAmount" jdbcType="INTEGER" property="productamount" />
-    <result column="productPrice" jdbcType="DECIMAL" property="productprice" />
+    <id column="orderDtlId" jdbcType="INTEGER" property="orderDtlId" />
+    <result column="lastUpdateTime" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="orderId" jdbcType="INTEGER" property="orderId" />
+    <result column="prodcutDtlID" jdbcType="INTEGER" property="prodcutDtlID" />
+    <result column="productColorId" jdbcType="INTEGER" property="productColorId" />
+    <result column="productAttrId" jdbcType="INTEGER" property="productAttrId" />
+    <result column="productAmount" jdbcType="INTEGER" property="productAmount" />
+    <result column="productPrice" jdbcType="DECIMAL" property="productPrice" />
     <result column="integration" jdbcType="INTEGER" property="integration" />
-    <result column="detailPic" jdbcType="VARCHAR" property="detailpic" />
+    <result column="detailPic" jdbcType="VARCHAR" property="detailPic" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -94,11 +94,11 @@
     select 
     <include refid="Base_Column_List" />
     from order_dtl
-    where orderDtlId = #{orderdtlid,jdbcType=INTEGER}
+    where orderDtlId = #{orderDtlId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from order_dtl
-    where orderDtlId = #{orderdtlid,jdbcType=INTEGER}
+    where orderDtlId = #{orderDtlId,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.huihong.qike.pojo.OrderDtlExample">
     delete from order_dtl
@@ -111,81 +111,81 @@
       orderId, prodcutDtlID, productColorId, 
       productAttrId, productAmount, productPrice, 
       integration, detailPic)
-    values (#{orderdtlid,jdbcType=INTEGER}, #{lastupdatetime,jdbcType=TIMESTAMP}, #{createtime,jdbcType=TIMESTAMP}, 
-      #{orderid,jdbcType=INTEGER}, #{prodcutdtlid,jdbcType=INTEGER}, #{productcolorid,jdbcType=INTEGER}, 
-      #{productattrid,jdbcType=INTEGER}, #{productamount,jdbcType=INTEGER}, #{productprice,jdbcType=DECIMAL}, 
-      #{integration,jdbcType=INTEGER}, #{detailpic,jdbcType=VARCHAR})
+    values (#{orderDtlId,jdbcType=INTEGER}, #{lastUpdateTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{orderId,jdbcType=INTEGER}, #{prodcutDtlID,jdbcType=INTEGER}, #{productColorId,jdbcType=INTEGER}, 
+      #{productAttrId,jdbcType=INTEGER}, #{productAmount,jdbcType=INTEGER}, #{productPrice,jdbcType=DECIMAL}, 
+      #{integration,jdbcType=INTEGER}, #{detailPic,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.huihong.qike.pojo.OrderDtl">
     insert into order_dtl
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="orderdtlid != null">
+      <if test="orderDtlId != null">
         orderDtlId,
       </if>
-      <if test="lastupdatetime != null">
+      <if test="lastUpdateTime != null">
         lastUpdateTime,
       </if>
-      <if test="createtime != null">
+      <if test="createTime != null">
         createTime,
       </if>
-      <if test="orderid != null">
+      <if test="orderId != null">
         orderId,
       </if>
-      <if test="prodcutdtlid != null">
+      <if test="prodcutDtlID != null">
         prodcutDtlID,
       </if>
-      <if test="productcolorid != null">
+      <if test="productColorId != null">
         productColorId,
       </if>
-      <if test="productattrid != null">
+      <if test="productAttrId != null">
         productAttrId,
       </if>
-      <if test="productamount != null">
+      <if test="productAmount != null">
         productAmount,
       </if>
-      <if test="productprice != null">
+      <if test="productPrice != null">
         productPrice,
       </if>
       <if test="integration != null">
         integration,
       </if>
-      <if test="detailpic != null">
+      <if test="detailPic != null">
         detailPic,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="orderdtlid != null">
-        #{orderdtlid,jdbcType=INTEGER},
+      <if test="orderDtlId != null">
+        #{orderDtlId,jdbcType=INTEGER},
       </if>
-      <if test="lastupdatetime != null">
-        #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderid != null">
-        #{orderid,jdbcType=INTEGER},
+      <if test="orderId != null">
+        #{orderId,jdbcType=INTEGER},
       </if>
-      <if test="prodcutdtlid != null">
-        #{prodcutdtlid,jdbcType=INTEGER},
+      <if test="prodcutDtlID != null">
+        #{prodcutDtlID,jdbcType=INTEGER},
       </if>
-      <if test="productcolorid != null">
-        #{productcolorid,jdbcType=INTEGER},
+      <if test="productColorId != null">
+        #{productColorId,jdbcType=INTEGER},
       </if>
-      <if test="productattrid != null">
-        #{productattrid,jdbcType=INTEGER},
+      <if test="productAttrId != null">
+        #{productAttrId,jdbcType=INTEGER},
       </if>
-      <if test="productamount != null">
-        #{productamount,jdbcType=INTEGER},
+      <if test="productAmount != null">
+        #{productAmount,jdbcType=INTEGER},
       </if>
-      <if test="productprice != null">
-        #{productprice,jdbcType=DECIMAL},
+      <if test="productPrice != null">
+        #{productPrice,jdbcType=DECIMAL},
       </if>
       <if test="integration != null">
         #{integration,jdbcType=INTEGER},
       </if>
-      <if test="detailpic != null">
-        #{detailpic,jdbcType=VARCHAR},
+      <if test="detailPic != null">
+        #{detailPic,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -198,38 +198,38 @@
   <update id="updateByExampleSelective" parameterType="map">
     update order_dtl
     <set>
-      <if test="record.orderdtlid != null">
-        orderDtlId = #{record.orderdtlid,jdbcType=INTEGER},
+      <if test="record.orderDtlId != null">
+        orderDtlId = #{record.orderDtlId,jdbcType=INTEGER},
       </if>
-      <if test="record.lastupdatetime != null">
-        lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="record.lastUpdateTime != null">
+        lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.createtime != null">
-        createTime = #{record.createtime,jdbcType=TIMESTAMP},
+      <if test="record.createTime != null">
+        createTime = #{record.createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.orderid != null">
-        orderId = #{record.orderid,jdbcType=INTEGER},
+      <if test="record.orderId != null">
+        orderId = #{record.orderId,jdbcType=INTEGER},
       </if>
-      <if test="record.prodcutdtlid != null">
-        prodcutDtlID = #{record.prodcutdtlid,jdbcType=INTEGER},
+      <if test="record.prodcutDtlID != null">
+        prodcutDtlID = #{record.prodcutDtlID,jdbcType=INTEGER},
       </if>
-      <if test="record.productcolorid != null">
-        productColorId = #{record.productcolorid,jdbcType=INTEGER},
+      <if test="record.productColorId != null">
+        productColorId = #{record.productColorId,jdbcType=INTEGER},
       </if>
-      <if test="record.productattrid != null">
-        productAttrId = #{record.productattrid,jdbcType=INTEGER},
+      <if test="record.productAttrId != null">
+        productAttrId = #{record.productAttrId,jdbcType=INTEGER},
       </if>
-      <if test="record.productamount != null">
-        productAmount = #{record.productamount,jdbcType=INTEGER},
+      <if test="record.productAmount != null">
+        productAmount = #{record.productAmount,jdbcType=INTEGER},
       </if>
-      <if test="record.productprice != null">
-        productPrice = #{record.productprice,jdbcType=DECIMAL},
+      <if test="record.productPrice != null">
+        productPrice = #{record.productPrice,jdbcType=DECIMAL},
       </if>
       <if test="record.integration != null">
         integration = #{record.integration,jdbcType=INTEGER},
       </if>
-      <if test="record.detailpic != null">
-        detailPic = #{record.detailpic,jdbcType=VARCHAR},
+      <if test="record.detailPic != null">
+        detailPic = #{record.detailPic,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -238,17 +238,17 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update order_dtl
-    set orderDtlId = #{record.orderdtlid,jdbcType=INTEGER},
-      lastUpdateTime = #{record.lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{record.createtime,jdbcType=TIMESTAMP},
-      orderId = #{record.orderid,jdbcType=INTEGER},
-      prodcutDtlID = #{record.prodcutdtlid,jdbcType=INTEGER},
-      productColorId = #{record.productcolorid,jdbcType=INTEGER},
-      productAttrId = #{record.productattrid,jdbcType=INTEGER},
-      productAmount = #{record.productamount,jdbcType=INTEGER},
-      productPrice = #{record.productprice,jdbcType=DECIMAL},
+    set orderDtlId = #{record.orderDtlId,jdbcType=INTEGER},
+      lastUpdateTime = #{record.lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{record.createTime,jdbcType=TIMESTAMP},
+      orderId = #{record.orderId,jdbcType=INTEGER},
+      prodcutDtlID = #{record.prodcutDtlID,jdbcType=INTEGER},
+      productColorId = #{record.productColorId,jdbcType=INTEGER},
+      productAttrId = #{record.productAttrId,jdbcType=INTEGER},
+      productAmount = #{record.productAmount,jdbcType=INTEGER},
+      productPrice = #{record.productPrice,jdbcType=DECIMAL},
       integration = #{record.integration,jdbcType=INTEGER},
-      detailPic = #{record.detailpic,jdbcType=VARCHAR}
+      detailPic = #{record.detailPic,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -256,51 +256,51 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.huihong.qike.pojo.OrderDtl">
     update order_dtl
     <set>
-      <if test="lastupdatetime != null">
-        lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
+      <if test="lastUpdateTime != null">
+        lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="createtime != null">
-        createTime = #{createtime,jdbcType=TIMESTAMP},
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="orderid != null">
-        orderId = #{orderid,jdbcType=INTEGER},
+      <if test="orderId != null">
+        orderId = #{orderId,jdbcType=INTEGER},
       </if>
-      <if test="prodcutdtlid != null">
-        prodcutDtlID = #{prodcutdtlid,jdbcType=INTEGER},
+      <if test="prodcutDtlID != null">
+        prodcutDtlID = #{prodcutDtlID,jdbcType=INTEGER},
       </if>
-      <if test="productcolorid != null">
-        productColorId = #{productcolorid,jdbcType=INTEGER},
+      <if test="productColorId != null">
+        productColorId = #{productColorId,jdbcType=INTEGER},
       </if>
-      <if test="productattrid != null">
-        productAttrId = #{productattrid,jdbcType=INTEGER},
+      <if test="productAttrId != null">
+        productAttrId = #{productAttrId,jdbcType=INTEGER},
       </if>
-      <if test="productamount != null">
-        productAmount = #{productamount,jdbcType=INTEGER},
+      <if test="productAmount != null">
+        productAmount = #{productAmount,jdbcType=INTEGER},
       </if>
-      <if test="productprice != null">
-        productPrice = #{productprice,jdbcType=DECIMAL},
+      <if test="productPrice != null">
+        productPrice = #{productPrice,jdbcType=DECIMAL},
       </if>
       <if test="integration != null">
         integration = #{integration,jdbcType=INTEGER},
       </if>
-      <if test="detailpic != null">
-        detailPic = #{detailpic,jdbcType=VARCHAR},
+      <if test="detailPic != null">
+        detailPic = #{detailPic,jdbcType=VARCHAR},
       </if>
     </set>
-    where orderDtlId = #{orderdtlid,jdbcType=INTEGER}
+    where orderDtlId = #{orderDtlId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.huihong.qike.pojo.OrderDtl">
     update order_dtl
-    set lastUpdateTime = #{lastupdatetime,jdbcType=TIMESTAMP},
-      createTime = #{createtime,jdbcType=TIMESTAMP},
-      orderId = #{orderid,jdbcType=INTEGER},
-      prodcutDtlID = #{prodcutdtlid,jdbcType=INTEGER},
-      productColorId = #{productcolorid,jdbcType=INTEGER},
-      productAttrId = #{productattrid,jdbcType=INTEGER},
-      productAmount = #{productamount,jdbcType=INTEGER},
-      productPrice = #{productprice,jdbcType=DECIMAL},
+    set lastUpdateTime = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      orderId = #{orderId,jdbcType=INTEGER},
+      prodcutDtlID = #{prodcutDtlID,jdbcType=INTEGER},
+      productColorId = #{productColorId,jdbcType=INTEGER},
+      productAttrId = #{productAttrId,jdbcType=INTEGER},
+      productAmount = #{productAmount,jdbcType=INTEGER},
+      productPrice = #{productPrice,jdbcType=DECIMAL},
       integration = #{integration,jdbcType=INTEGER},
-      detailPic = #{detailpic,jdbcType=VARCHAR}
-    where orderDtlId = #{orderdtlid,jdbcType=INTEGER}
+      detailPic = #{detailPic,jdbcType=VARCHAR}
+    where orderDtlId = #{orderDtlId,jdbcType=INTEGER}
   </update>
 </mapper>

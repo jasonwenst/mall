@@ -10,7 +10,7 @@ public interface PaymentMapper {
 
     int deleteByExample(PaymentExample example);
 
-    int deleteByPrimaryKey(Integer paymentid);
+    int deleteByPrimaryKey(Integer paymentId);
 
     int insert(Payment record);
 
@@ -18,7 +18,7 @@ public interface PaymentMapper {
 
     List<Payment> selectByExample(PaymentExample example);
 
-    Payment selectByPrimaryKey(Integer paymentid);
+    Payment selectByPrimaryKey(Integer paymentId);
 
     int updateByExampleSelective(@Param("record") Payment record, @Param("example") PaymentExample example);
 

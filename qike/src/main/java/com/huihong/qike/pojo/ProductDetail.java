@@ -4,93 +4,93 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class ProductDetail {
-    private Integer productdetailid;
+    private Integer productDetailId;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    private String detailpic;
+    private String detailPic;
 
-    private Integer productid;
+    private Integer productId;
 
-    private Integer productcolorid;
+    private Integer productColorId;
 
-    private Integer productattrid;
+    private Integer productAttrId;
 
-    private Integer productamount;
+    private Integer productAmount;
 
-    private BigDecimal productprice;
+    private BigDecimal productPrice;
 
-    public Integer getProductdetailid() {
-        return productdetailid;
+    public Integer getProductDetailId() {
+        return productDetailId;
     }
 
-    public void setProductdetailid(Integer productdetailid) {
-        this.productdetailid = productdetailid;
+    public void setProductDetailId(Integer productDetailId) {
+        this.productDetailId = productDetailId;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getDetailpic() {
-        return detailpic;
+    public String getDetailPic() {
+        return detailPic;
     }
 
-    public void setDetailpic(String detailpic) {
-        this.detailpic = detailpic;
+    public void setDetailPic(String detailPic) {
+        this.detailPic = detailPic;
     }
 
-    public Integer getProductid() {
-        return productid;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setProductid(Integer productid) {
-        this.productid = productid;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
-    public Integer getProductcolorid() {
-        return productcolorid;
+    public Integer getProductColorId() {
+        return productColorId;
     }
 
-    public void setProductcolorid(Integer productcolorid) {
-        this.productcolorid = productcolorid;
+    public void setProductColorId(Integer productColorId) {
+        this.productColorId = productColorId;
     }
 
-    public Integer getProductattrid() {
-        return productattrid;
+    public Integer getProductAttrId() {
+        return productAttrId;
     }
 
-    public void setProductattrid(Integer productattrid) {
-        this.productattrid = productattrid;
+    public void setProductAttrId(Integer productAttrId) {
+        this.productAttrId = productAttrId;
     }
 
-    public Integer getProductamount() {
-        return productamount;
+    public Integer getProductAmount() {
+        return productAmount;
     }
 
-    public void setProductamount(Integer productamount) {
-        this.productamount = productamount;
+    public void setProductAmount(Integer productAmount) {
+        this.productAmount = productAmount;
     }
 
-    public BigDecimal getProductprice() {
-        return productprice;
+    public BigDecimal getProductPrice() {
+        return productPrice;
     }
 
-    public void setProductprice(BigDecimal productprice) {
-        this.productprice = productprice;
+    public void setProductPrice(BigDecimal productPrice) {
+        this.productPrice = productPrice;
     }
 }

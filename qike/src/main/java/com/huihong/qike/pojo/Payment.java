@@ -4,83 +4,83 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class Payment {
-    private Integer paymentid;
+    private Integer paymentId;
 
-    private Date lastupdatetime;
+    private Date lastUpdateTime;
 
-    private Date createtime;
+    private Date createTime;
 
-    private String extpaymentid;
+    private String extPaymentId;
 
-    private String paytype;
+    private String payType;
 
-    private Integer orderid;
+    private Integer orderId;
 
-    private BigDecimal payprice;
+    private BigDecimal payPrice;
 
-    private Integer userid;
+    private Integer userId;
 
-    public Integer getPaymentid() {
-        return paymentid;
+    public Integer getPaymentId() {
+        return paymentId;
     }
 
-    public void setPaymentid(Integer paymentid) {
-        this.paymentid = paymentid;
+    public void setPaymentId(Integer paymentId) {
+        this.paymentId = paymentId;
     }
 
-    public Date getLastupdatetime() {
-        return lastupdatetime;
+    public Date getLastUpdateTime() {
+        return lastUpdateTime;
     }
 
-    public void setLastupdatetime(Date lastupdatetime) {
-        this.lastupdatetime = lastupdatetime;
+    public void setLastUpdateTime(Date lastUpdateTime) {
+        this.lastUpdateTime = lastUpdateTime;
     }
 
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
-    public String getExtpaymentid() {
-        return extpaymentid;
+    public String getExtPaymentId() {
+        return extPaymentId;
     }
 
-    public void setExtpaymentid(String extpaymentid) {
-        this.extpaymentid = extpaymentid;
+    public void setExtPaymentId(String extPaymentId) {
+        this.extPaymentId = extPaymentId;
     }
 
-    public String getPaytype() {
-        return paytype;
+    public String getPayType() {
+        return payType;
     }
 
-    public void setPaytype(String paytype) {
-        this.paytype = paytype;
+    public void setPayType(String payType) {
+        this.payType = payType;
     }
 
-    public Integer getOrderid() {
-        return orderid;
+    public Integer getOrderId() {
+        return orderId;
     }
 
-    public void setOrderid(Integer orderid) {
-        this.orderid = orderid;
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 
-    public BigDecimal getPayprice() {
-        return payprice;
+    public BigDecimal getPayPrice() {
+        return payPrice;
     }
 
-    public void setPayprice(BigDecimal payprice) {
-        this.payprice = payprice;
+    public void setPayPrice(BigDecimal payPrice) {
+        this.payPrice = payPrice;
     }
 
-    public Integer getUserid() {
-        return userid;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserid(Integer userid) {
-        this.userid = userid;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 }
